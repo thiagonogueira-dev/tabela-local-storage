@@ -92,13 +92,11 @@ const selecionarCelula = (event) => {
 
 const removerProduto = (prod) =>{
     const produtos = JSON.parse(window.localStorage.getItem('produtos'));
-    console.log(produtos);
     produtos.forEach((produto, i) => {
         if(produto.descricao === prod){
             produtos.splice(i,1);
         }
     });
-    console.log(produtos);
     window.localStorage.setItem('produtos', JSON.stringify(produtos));
     atualizarTabela();
 }
